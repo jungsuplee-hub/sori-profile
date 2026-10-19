@@ -22,6 +22,7 @@ https://jungsuplee-hub.github.io/sori-profile/
 - Static HTML, CSS and JavaScript; no frameworks or runtime servers required.
 - Korean/English switch with saved preference.
 - Selected-project filters, archive search, year and record-type filters, progressive results display.
+- All 12 featured project cards open accessible detail dialogs with a larger image, documented scope, and a link to related projects from the same year. Korean cards say `자세히 보기`; English cards say `VIEW DETAILS`.
 - Mobile-first accessible layout, keyboard controls, reduced-motion support.
 - No credentials, runtime APIs, or paid services.
 
