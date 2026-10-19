@@ -22,7 +22,10 @@ https://jungsuplee-hub.github.io/sori-profile/
 - Static HTML, CSS and JavaScript; no frameworks or runtime servers required.
 - Korean/English switch with saved preference.
 - Selected-project filters, archive search, year and record-type filters, progressive results display.
-- All 12 featured project cards open accessible detail dialogs with a larger image, documented scope, and a link to related projects from the same year. Korean cards say `자세히 보기`; English cards say `VIEW DETAILS`.
+- All 12 featured project cards open accessible detail dialogs with event background, program highlights, scope of work, a larger image, an event-specific photo gallery where confirmed images are available, and a related-project navigation link.
+- Detailed event facts and bilingual descriptions are stored in `project-details.json`; public event-information URLs are linked within the detail view.
+- Event gallery images under `assets/gallery/` are reduced-size derivatives of event-specific folders. Not all projects have additional event photographs; do not substitute unrelated images or claim design mockups are event photos.
+- Public page content does not include links to this source repository.
 - Mobile-first accessible layout, keyboard controls, reduced-motion support.
 - No credentials, runtime APIs, or paid services.
 
