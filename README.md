@@ -11,9 +11,11 @@ https://jungsuplee-hub.github.io/sori-profile/
 - Current role: Director at Speaence (per the portfolio owner's latest information).
 - Historical employment and project roles: Korean resume, professional records and project materials.
 - Featured projects: 12 selected international summits, conferences, forums and events.
+- Every featured card and each of the 141 archive entries has a local optimized WebP thumbnail in `assets/thumbs/` (no external image dependency).
+- Image types in `projects.json`: `project_photo` for photographs taken from the matching project archive; `project_artwork` for a project-specific visual; `illustration` for original topic-based illustrations where publishable imagery was not available. Illustrations are **not** presented as documentary photos of the actual event.
 - Searchable archive: 2011–2025 records from the owner's professional folders, grouped as project-delivery/operation materials and planning/proposal materials.
 - The archive is an **inventory of working materials**, not a count of successfully completed or awarded projects. A proposal entry does not imply winning the bid, and a project record does not imply sole leadership.
-- The source materials are not published. The site omits street addresses, personal contact details, business documents, financial records, confidential participant lists, and original internal project files.
+- The source materials are not published. The site omits street addresses, personal contact details, business documents, financial records, confidential participant lists, and original internal project files. Only selected, resized event imagery and original illustrations appear in the public repository.
 
 ## Features
 
