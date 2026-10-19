@@ -1,35 +1,40 @@
 # SORI YOO — MICE & Event Portfolio
 
-A responsive, bilingual (Korean / English) professional portfolio for Yoo Sori.
+Responsive Korean/English professional portfolio for Sori Yoo, currently a Director at Speaence.
 
 ## Live site
 
-After GitHub Pages is enabled: https://jungsuplee-hub.github.io/sori-profile/
+https://jungsuplee-hub.github.io/sori-profile/
 
-## Source material and editorial policy
+## Content
 
-Content is curated from a September 2021 Korean resume and a professional project archive. Original source documents remain offline and are not included in this repository.
-
-This public repository **does not contain the source resume**, personal address, phone, birthday, bank or ID documents, private correspondence, or unauthorized project photos.
-
-The employment timeline is historical; more recent roles should be verified before adding them. Project descriptions include only roles documented in the resume.
+- Current role: Director at Speaence (per the portfolio owner's latest information).
+- Historical employment and project roles: Korean resume, professional records and project materials.
+- Featured projects: 12 selected international summits, conferences, forums and events.
+- Searchable archive: 2011–2025 records from the owner's professional folders, grouped as project-delivery/operation materials and planning/proposal materials.
+- The archive is an **inventory of working materials**, not a count of successfully completed or awarded projects. A proposal entry does not imply winning the bid, and a project record does not imply sole leadership.
+- The source materials are not published. The site omits street addresses, personal contact details, business documents, financial records, confidential participant lists, and original internal project files.
 
 ## Features
 
-- Responsive, accessible, self-contained static HTML, CSS and JavaScript
-- Korean and English language toggle with local preference
-- Interactive project filters; reduced-motion support
-- SEO and Open Graph metadata
-- No build tools, private credentials, runtime APIs, or paid services
+- Static HTML, CSS and JavaScript; no frameworks or runtime servers required.
+- Korean/English switch with saved preference.
+- Selected-project filters, archive search, year and record-type filters, progressive results display.
+- Mobile-first accessible layout, keyboard controls, reduced-motion support.
+- No credentials, runtime APIs, or paid services.
 
-## Deploy with GitHub Pages
+## Update project archive
 
-GitHub repository Settings → Pages → Build and deployment → Deploy from a branch → `main` and `/(root)`. The site works under the repository subpath `/sori-profile/` with no rewrite rule.
+`projects.json` is a reviewed, public-safe listing of `{year, title, kind}` records; `kind` is `operation` or `proposal`. Do not include source paths, personal data, third-party contact information, or private attachments.
 
-## Local preview
+## Publish
+
+GitHub Pages: branch `main`, folder `/(root)`.
+
+Local preview:
 
 ```sh
 python3 -m http.server 8888
 ```
 
-Then open http://localhost:8888/.
+Visit http://localhost:8888/ to preview the site and archive.
