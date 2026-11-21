@@ -227,6 +227,8 @@
     .detail-links .detail-related{margin-top:0}
     @media(max-width:700px){.detail-photo-bar{padding:9px 15px}.detail-gallery{gap:9px}.detail-photo-option img{height:98px}.detail-content{padding:25px 19px 32px}.detail-section{margin-top:24px}.detail-source-link{order:2}}
   </style>
+  <link rel="stylesheet" href="./assets/css/inquiries.css">
+  <script defer src="./assets/js/inquiries.js"></script>
 </head>
 <body>
   <header class="nav-wrap">
@@ -236,7 +238,7 @@
         <a href="#about" data-i18n="navAbout">소개</a>
         <a href="#expertise" data-i18n="navExpertise">전문 분야</a>
         <a href="#work" data-i18n="navWork">프로젝트</a>
-        <a href="#archive" data-i18n="navArchive">전체 프로젝트</a><a href="#experience" data-i18n="navExperience">경력</a>
+        <a href="#archive" data-i18n="navArchive">전체 프로젝트</a><a href="#experience" data-i18n="navExperience">경력</a><a href="#inquiries" data-inquiry-i18n="nav">문의</a>
       </div>
       <div class="nav-end">
         <button class="lang" id="language" aria-label="Switch language">EN ↗</button>
@@ -377,10 +379,63 @@
         </div>
       </div>
     </section>
+
+    <section class="content inquiries-section" id="inquiries" aria-labelledby="inquiries-title">
+      <div class="container">
+        <div class="inquiries-head">
+          <div class="reveal">
+            <div class="eyebrow">07 / INQUIRIES</div>
+            <h2 class="section-title" id="inquiries-title" data-inquiry-i18n="title">프로젝트에 대해<br>궁금한 점이 있으신가요?</h2>
+            <p class="lead" data-inquiry-i18n="lead">행사 기획, 프로젝트 수행 경험, 협업에 관한 질문이나 제안을 남겨 주세요.</p>
+          </div>
+          <a class="inquiry-link-button" href="#inquiry-write" data-inquiry-i18n="contactBoard">공개 문의 남기기 ↗</a>
+        </div>
+        <div class="inquiry-layout">
+          <div class="inquiry-board" aria-label="Public inquiries">
+            <div class="inquiry-board-head">
+              <h3 data-inquiry-i18n="boardTitle">공개 문의 게시판</h3>
+              <span class="inquiry-counter" id="inquiry-counter" aria-live="polite">0건</span>
+            </div>
+            <div class="inquiry-tabs" role="group" aria-label="Inquiry status">
+              <button type="button" class="inquiry-tab" data-inquiry-tab="all" aria-pressed="true">전체</button>
+              <button type="button" class="inquiry-tab" data-inquiry-tab="open" aria-pressed="false">진행 중</button>
+              <button type="button" class="inquiry-tab" data-inquiry-tab="closed" aria-pressed="false">종료</button>
+            </div>
+            <div class="inquiry-items" id="inquiry-items" aria-live="polite"><div class="inquiry-empty">문의 목록을 불러오는 중입니다.</div></div>
+            <div class="inquiry-board-footer">
+              <button type="button" id="inquiry-more" data-inquiry-i18n="more" hidden>문의 더 보기</button>
+              <a href="https://github.com/jungsuplee-hub/sori-profile/issues" target="_blank" rel="noopener noreferrer" class="inquiry-link-button" data-inquiry-i18n="viewGithub">GitHub에서 전체 문의 보기 ↗</a>
+            </div>
+          </div>
+          <form class="inquiry-compose" id="inquiry-write" novalidate>
+            <h3 data-inquiry-i18n="composeTitle">문의 작성하기</h3>
+            <p class="inquiry-compose-lead" data-inquiry-i18n="composeLead">내용을 작성하면 GitHub의 최종 등록 화면으로 이동합니다.</p>
+            <label for="inquiry-category" data-inquiry-i18n="category">문의 유형</label>
+            <select id="inquiry-category" name="inquiry-category" required>
+              <option value="general">일반 문의</option>
+              <option value="collaboration">협업 제안</option>
+              <option value="project">프로젝트 관련</option>
+              <option value="other">기타</option>
+            </select>
+            <label for="inquiry-subject" data-inquiry-i18n="subject">제목</label>
+            <input id="inquiry-subject" name="inquiry-subject" type="text" maxlength="100" autocomplete="off" placeholder="문의 제목을 입력해 주세요" data-inquiry-placeholder="subjectPlaceholder" required>
+            <label for="inquiry-body" data-inquiry-i18n="content">문의 내용</label>
+            <textarea id="inquiry-body" name="inquiry-body" minlength="5" maxlength="6000" placeholder="궁금한 점이나 제안 내용을 작성해 주세요" data-inquiry-placeholder="contentPlaceholder" required></textarea>
+            <p class="inquiry-error" id="inquiry-form-error" role="alert"></p>
+            <button class="inquiry-submit" type="submit" data-inquiry-i18n="submit">GitHub에서 문의 등록 ↗</button>
+            <p class="inquiry-help" data-inquiry-i18n="notice">공개 게시판입니다. 전화번호, 이메일, 개인정보나 기밀 사항은 작성하지 마세요. 등록 및 답글 작성에는 GitHub 로그인이 필요합니다.</p>
+          </form>
+        </div>
+      </div>
+    </section>
     <section class="contact" id="contact">
       <div class="container contact-grid">
-        <div><div class="eyebrow">07 / CONNECT</div><h2 data-i18n="contactTitle">Meaningful moments<br>begin with ideas.</h2><p data-i18n="contactBody">사람과 아이디어, 현장의 디테일을 연결해 의미 있는 경험을 만듭니다.</p></div>
-
+        <div><div class="eyebrow">08 / CONNECT</div><h2 data-i18n="contactTitle">Meaningful moments<br>begin with ideas.</h2><p data-inquiry-i18n="contactDescription">프로젝트와 협업에 관해 궁금한 사항이 있다면 공개 문의 게시판을 이용해 주세요.</p></div>
+        <div class="contact-info">
+          <a href="#inquiries"><small data-inquiry-i18n="contactBoard">공개 문의 남기기 ↗</small><strong data-inquiry-i18n="boardTitle">공개 문의 게시판</strong></a>
+          <a href="tel:+8227183700"><small data-inquiry-i18n="companyPhone">스피언스 대표전화 (개인 연락처 아님)</small><strong>02-718-3700</strong></a>
+          <div class="contact-info-note"><span data-inquiry-i18n="phoneNote">회사 대표번호는 기업 공개정보 기준이며 개인 연락처가 아닙니다.</span> <a href="https://bizno.net/article/1088616324" target="_blank" rel="noopener noreferrer" data-inquiry-i18n="source">번호 출처</a><br><span data-inquiry-i18n="emailNote">개인 이메일 주소는 확인되지 않아 표시하지 않았습니다.</span></div>
+        </div>
       </div>
     </section>
   </main>

@@ -44,3 +44,11 @@ python3 -m http.server 8888
 ```
 
 Visit http://localhost:8888/ to preview the site and archive.
+
+## Public inquiry board
+
+- The `#inquiries` section shows inquiries from public GitHub Issues with titles starting `[문의]` or `[Inquiry]`, using GitHub's public REST API.
+- Visitors can draft a question on the profile. Submitting opens GitHub's `inquiry.yml` form with prefilled values; **GitHub login and a final submission on GitHub are required**. This is not an anonymous or private contact form.
+- GitHub Issues store the conversations. The static website uses no token or server-side secret and shows up to 100 recent Issues, with short session caching and a GitHub link for the full list.
+- Do not publish personal contact details or confidential material in Issues. The profile's contact panel only shows the separately sourced **SPEAENCE company main number**, not a personal line; no unverified personal email is published.
+- Relevant files: `assets/js/inquiries.js`, `assets/css/inquiries.css`, `.github/ISSUE_TEMPLATE/inquiry.yml`.
