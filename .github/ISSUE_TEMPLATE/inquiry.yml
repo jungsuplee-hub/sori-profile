@@ -13,10 +13,10 @@ body:
     attributes:
       label: "문의 유형 / Inquiry type"
       options:
-        - general
-        - collaboration
-        - project
-        - other
+        - "일반 문의 / General inquiry"
+        - "협업 제안 / Collaboration"
+        - "프로젝트 관련 / Project question"
+        - "기타 / Other"
     validations:
       required: true
   - type: textarea

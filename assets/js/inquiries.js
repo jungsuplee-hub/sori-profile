@@ -20,7 +20,7 @@
       category: '문의 유형', general: '일반 문의', collaboration: '협업 제안', project: '프로젝트 관련', other: '기타',
       subject: '제목', subjectPlaceholder: '문의 제목을 입력해 주세요', content: '문의 내용', contentPlaceholder: '궁금한 점이나 제안 내용을 작성해 주세요',
       submit: 'GitHub에서 문의 등록 ↗', notice: '공개 게시판입니다. 전화번호, 이메일, 개인정보나 기밀 사항은 작성하지 마세요. 등록 및 답글 작성에는 GitHub 로그인이 필요합니다.',
-      noticeError: '제목과 문의 내용을 모두 입력해 주세요.',
+      noticeError: '제목과 문의 내용을 5자 이상 입력해 주세요.',
       all: '전체', open: '진행 중', closed: '종료', loading: '문의 목록을 불러오는 중입니다.',
       empty: '아직 등록된 문의가 없습니다.', emptyLead: '첫 번째 문의를 남겨 주세요.',
       loadError: '문의 목록을 가져오지 못했습니다.', loadErrorLead: '잠시 후 새로고침하거나 GitHub에서 목록을 확인해 주세요.',
@@ -36,7 +36,7 @@
       category: 'Inquiry type', general: 'General question', collaboration: 'Collaboration proposal', project: 'Project question', other: 'Other',
       subject: 'Subject', subjectPlaceholder: 'Enter a subject', content: 'Your message', contentPlaceholder: 'Describe your question or proposal',
       submit: 'Continue on GitHub ↗', notice: 'This is a public board. Do not enter email addresses, phone numbers, personal details or confidential information. A GitHub account is required to post and reply.',
-      noticeError: 'Please enter a subject and a message.',
+      noticeError: 'Please enter a subject and at least 5 characters of message.',
       all: 'All', open: 'Open', closed: 'Closed', loading: 'Loading inquiries…',
       empty: 'No inquiries yet.', emptyLead: 'Be the first to post a question.',
       loadError: 'Unable to load inquiries.', loadErrorLead: 'Try refreshing or view them directly on GitHub.',
@@ -149,7 +149,7 @@
     const subject = form.elements.namedItem('inquiry-subject').value.trim();
     const body = form.elements.namedItem('inquiry-body').value.trim();
     const err = document.getElementById('inquiry-form-error');
-    if (!subject || !body) {
+    if (!subject || body.length < 5) {
       err.textContent = i18n('noticeError');
       return;
     }
@@ -157,7 +157,8 @@
     const url = new URL(base + '/issues/new');
     url.searchParams.set('template', 'inquiry.yml');
     url.searchParams.set('title', (document.documentElement.lang === 'en' ? '[Inquiry] ' : '[문의] ') + subject.slice(0, 100));
-    url.searchParams.set('category', form.elements.namedItem('inquiry-category').value);
+    const categories = {general: '일반 문의 / General inquiry', collaboration: '협업 제안 / Collaboration', project: '프로젝트 관련 / Project question', other: '기타 / Other'};
+    url.searchParams.set('category', categories[form.elements.namedItem('inquiry-category').value] || categories.general);
     url.searchParams.set('inquiry-details', body.slice(0, 6000));
     window.location.assign(url.toString());
   });
