@@ -1,0 +1,26 @@
+/* Business-card contact section */
+.contact{background:#cce8dc;position:relative;padding:100px 0 110px;overflow:hidden}
+.contact::after{z-index:0}
+.contact-stage{position:relative;z-index:1;display:grid;grid-template-columns:minmax(250px,.8fr) minmax(0,1.3fr);align-items:center;gap:clamp(26px,5vw,85px)}
+.contact-stage .eyebrow{color:#216754}
+.contact-intro h2{font:800 clamp(36px,4.3vw,62px)/1.14 Manrope,'Noto Sans KR',sans-serif;letter-spacing:-.065em;margin:20px 0 20px;color:#133c35}
+.contact-intro p{font-size:15px;line-height:1.9;color:#486e61;max-width:390px;margin:0}
+.contact-business-card{display:grid;grid-template-columns:minmax(190px,.83fr) minmax(0,1.17fr);min-height:332px;background:#f9fcf9;border:1px solid #a3d3bb;border-radius:19px;box-shadow:0 25px 65px rgba(27,69,55,.14);overflow:hidden;isolation:isolate}
+.contact-card-identity{position:relative;padding:37px 30px 34px;background:#122b32;color:#eef8f2;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:36px;overflow:hidden}
+.contact-card-identity::after{content:'';position:absolute;width:220px;height:220px;border:1px solid rgba(187,230,210,.16);border-radius:50%;right:-120px;bottom:-105px;box-shadow:0 0 0 32px rgba(176,225,204,.08),0 0 0 69px rgba(176,225,204,.04);pointer-events:none}
+.contact-card-monogram{display:inline-grid;place-items:center;width:54px;height:54px;background:#f0f7f3;border-radius:50%;font:850 24px Manrope,sans-serif;color:#142d33;letter-spacing:-.07em}
+.contact-card-monogram span{color:#1e9a83}
+.contact-card-name{position:relative;z-index:1}
+.contact-card-name strong{display:block;font:800 clamp(25px,2.8vw,35px)/1.2 Manrope,sans-serif;letter-spacing:-.055em;white-space:nowrap}
+.contact-card-name span{display:block;font-size:11px;color:#b4d8ca;margin-top:9px;font-weight:700;letter-spacing:.03em;line-height:1.6}
+.contact-card-details{padding:34px clamp(24px,3vw,42px);display:flex;flex-direction:column;justify-content:space-between;gap:20px;min-width:0}
+.contact-card-overline{font:800 11px Manrope,sans-serif;color:#32816e;letter-spacing:.19em}
+.contact-card-item{display:block;border-bottom:1px solid #e0e9e3;padding:7px 0 19px;color:#193b36;text-decoration:none;min-width:0;transition:color .2s}
+.contact-card-item:last-of-type{border-bottom:0;padding-bottom:4px}
+.contact-card-item small{display:flex;align-items:center;justify-content:space-between;color:#638277;font:800 11px Manrope,'Noto Sans KR',sans-serif;letter-spacing:.08em;margin-bottom:11px}
+.contact-card-item small::after{content:'↗';font-size:17px;line-height:1;font-weight:500;color:#388b76}
+.contact-card-item strong{font-size:clamp(15px,1.5vw,20px);font-weight:800;letter-spacing:-.035em;overflow-wrap:anywhere;line-height:1.5}
+.contact-card-item:hover,.contact-card-item:focus-visible{color:#16866b}
+.contact-card-item:focus-visible{outline:3px solid #16866b;outline-offset:3px;border-radius:3px}
+@media(max-width:1080px){.contact-stage{grid-template-columns:1fr;gap:35px}.contact-intro p{max-width:600px}.contact-business-card{max-width:790px;width:100%}}
+@media(max-width:700px){.contact{padding:68px 0 78px}.contact-stage{gap:28px}.contact-business-card{grid-template-columns:1fr;min-height:0;border-radius:14px}.contact-card-identity{padding:25px 26px;flex-direction:row;align-items:center;gap:20px;justify-content:flex-start}.contact-card-identity::after{right:-135px;bottom:-145px}.contact-card-monogram{width:50px;height:50px;flex:none}.contact-card-name strong{font-size:26px}.contact-card-details{padding:28px 26px;gap:16px}.contact-card-item{padding:7px 0 18px}.contact-card-item strong{font-size:17px}}
